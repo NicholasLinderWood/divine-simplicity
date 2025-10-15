@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+from collections.abc import Sequence
 from typing import NamedTuple
 
 
@@ -23,17 +24,23 @@ class Triangle(NamedTuple):
     c: Point
 
 
-def get_triangle_coordinates(
-    t: Triangle,
+def get_coordinates(
+    points: Point | Sequence[Point],
 ) -> tuple[
-    tuple[float, float, float, float],
-    tuple[float, float, float, float],
+    tuple[float, ...],
+    tuple[float, ...],
 ]:
 
-    x = (t.a.x, t.b.x, t.c.x, t.a.x)
-    y = (t.a.y, t.b.y, t.c.y, t.a.y)
+    if isinstance(points, Point):
+        return ((points.x,), (points.y,))
 
-    return x, y
+    else:
+        points = list(points) + [points[0]]
+
+        x = tuple(p.x for p in points)
+        y = tuple(p.y for p in points)
+
+        return x, y
 
 
 def centroid(t: Triangle) -> Point:

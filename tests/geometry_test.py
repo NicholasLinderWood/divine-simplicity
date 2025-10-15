@@ -5,7 +5,7 @@ import math
 import pytest
 
 from divine_simplicity.geometry import centroid
-from divine_simplicity.geometry import get_triangle_coordinates
+from divine_simplicity.geometry import get_coordinates
 from divine_simplicity.geometry import intersection
 from divine_simplicity.geometry import length
 from divine_simplicity.geometry import Line
@@ -16,7 +16,15 @@ from divine_simplicity.geometry import Triangle
 from divine_simplicity.geometry import y_intercept
 
 
-def test_get_triangle_coordinates():
+def test_get_coordinates_on_point():
+
+    p = Point(0, 0)
+    expected = ((0,), (0,))
+
+    assert get_coordinates(p) == expected
+
+
+def test_get_coordinates_on_sequence():
 
     t = Triangle(
         Point(0, 0),
@@ -29,7 +37,7 @@ def test_get_triangle_coordinates():
         (0, 0, 2.5, 0),
     )
 
-    assert get_triangle_coordinates(t) == expected
+    assert get_coordinates(t) == expected
 
 
 @pytest.mark.parametrize(
