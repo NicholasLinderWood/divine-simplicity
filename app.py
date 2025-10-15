@@ -4,6 +4,7 @@ from dash import Dash
 from dash import html
 
 from divine_simplicity.constants import APP_TITLE
+from divine_simplicity.plotting import triangle_graph
 
 
 def main() -> int:
@@ -17,6 +18,7 @@ def main() -> int:
                 className='userContent vr',
                 children=[
                     APP_TITLE,
+                    triangle_graph(),
                 ],
             ),
         ),
