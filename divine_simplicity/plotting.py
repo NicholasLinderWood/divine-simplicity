@@ -24,8 +24,14 @@ def init_triangle_figure() -> graph_objects.Figure:
             ),
         ],
         layout=graph_objects.Layout(
-            xaxis={'range': [c_x - 1, c_x + 1]},
-            yaxis={'range': [c_y - 1, c_y + 1]},
+            xaxis={
+                'range': [c_x - 1, c_x + 1],
+                'showticklabels': False,
+            },
+            yaxis={
+                'range': [c_y - 1, c_y + 1],
+                'showticklabels': False,
+            },
         ),
     )
     fig.update_layout(
