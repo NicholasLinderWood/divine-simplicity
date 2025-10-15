@@ -27,10 +27,12 @@ def init_triangle_figure() -> graph_objects.Figure:
             xaxis={
                 'range': [c_x - 1, c_x + 1],
                 'showticklabels': False,
+                'fixedrange': True,
             },
             yaxis={
                 'range': [c_y - 1, c_y + 1],
                 'showticklabels': False,
+                'fixedrange': True,
             },
         ),
     )
