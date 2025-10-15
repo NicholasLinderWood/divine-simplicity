@@ -1,0 +1,45 @@
+/* Import Bootstrap v3.3.7 (http://getbootstrap.com) */
+@import "bootstrap.min.css";
+
+/* Import SRTR website CSS */
+/*@import "modern.css";*/
+@import url("https://www.srtr.org/assets/styles/modern.css");
+
+/* Import SRTR shiny CSS */
+@import "srtr_shiny.css";
+
+/* Set Max width to 100%, unless screen width is wide */
+
+.shiny_wrapper {
+  max-width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* This may need to be adjusted if the app is wide */
+
+@media (min-width: 1135px) {
+  .shiny_wrapper {
+    max-width: 1135px;
+  }
+}
+
+.userContent .row {
+	margin: 0px 0px;
+}
+
+.userContent table {
+	margin-bottom: 12px;
+}
+
+.userContent th {
+	text-align: center;
+	font-weight: bold;
+	padding: 0px 5px;
+}
+
+.userContent table td + td {
+	border: none;
+}
