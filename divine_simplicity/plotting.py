@@ -49,6 +49,7 @@ def init_triangle_figure() -> graph_objects.Figure:
             marker={
                 'color': 'black',
             },
+            hoverinfo='none',
         ),
     )
     fig.update_layout(
