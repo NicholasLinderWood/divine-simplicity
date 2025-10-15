@@ -21,6 +21,10 @@ def init_triangle_figure() -> graph_objects.Figure:
                 x=x,
                 y=y,
                 mode='lines',
+                line={
+                    'color': 'black',
+                    'width': 5,
+                },
             ),
         ],
         layout=graph_objects.Layout(
@@ -33,6 +37,17 @@ def init_triangle_figure() -> graph_objects.Figure:
                 'range': [c_y - 1, c_y + 1],
                 'showticklabels': False,
                 'fixedrange': True,
+            },
+        ),
+    )
+    fig.add_trace(
+        graph_objects.Scatter(
+            x=x[0:-1],
+            y=y[0:-1],
+            mode='markers',
+            name='Points',
+            marker={
+                'color': 'black',
             },
         ),
     )
