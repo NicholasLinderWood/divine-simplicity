@@ -59,6 +59,7 @@ def init_triangle_figure() -> graph_objects.Figure:
         },
         width=600,
         height=600,
+        showlegend=False,
     )
 
     return fig
