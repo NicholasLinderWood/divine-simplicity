@@ -23,6 +23,19 @@ class Triangle(NamedTuple):
     c: Point
 
 
+def get_triangle_coordinates(
+    t: Triangle,
+) -> tuple[
+    tuple[float, float, float, float],
+    tuple[float, float, float, float],
+]:
+
+    x = (t.a.x, t.b.x, t.c.x, t.a.x)
+    y = (t.a.y, t.b.y, t.c.y, t.a.y)
+
+    return x, y
+
+
 def centroid(t: Triangle) -> Point:
 
     a, b, c = t
